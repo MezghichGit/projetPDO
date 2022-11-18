@@ -15,7 +15,7 @@
         <a class="nav-link" href="dashboardadmin.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="creerproduit.php">Créer un produit</a>
+        <a class="nav-link" href="produitadmin.php">Créer un produit</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="clientsadmin.php">Liste clients</a>
