@@ -1,3 +1,7 @@
+<?php
+session_start();
+if ($_SESSION["email"] && $_SESSION["role"]=="admin") {
+?>
 <html>
 <head>
 <meta charset="UTF-8"/>
@@ -22,6 +26,10 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Déconnexion</a>
+      </li>
+
+      <li class="nav-item" style="margin-left:600px">
+        <a class="nav-link">Bonjour <?php echo $_SESSION["email"];?></a>
       </li>
     </ul>
   </div>
@@ -49,14 +57,14 @@
   </thead>
   <tbody>
     <?php
-        // récupération des produits de la base via PDO
-        require_once(dirname(__FILE__)."/Config/Connexion.php");
-        $pdoConnexion = new PDOConnexion();
-        $pdo = $pdoConnexion->createConnexion();
-        $strSQL = "SELECT * FROM produit";
-        //execution de la requête et affichage des résultats
-        foreach ($pdo->query($strSQL) as $row) {
-            ?>
+            // récupération des produits de la base via PDO
+            require_once(dirname(__FILE__)."/Config/Connexion.php");
+    $pdoConnexion = new PDOConnexion();
+    $pdo = $pdoConnexion->createConnexion();
+    $strSQL = "SELECT * FROM produit";
+    //execution de la requête et affichage des résultats
+    foreach ($pdo->query($strSQL) as $row) {
+        ?>
             <tr>
                 <td><?php echo $row['id'];?></td>
                 <td><img  width="20%" src="<?php echo $row['photo'];?>" /></td>
@@ -70,7 +78,7 @@
             
     
     <?php
-        }
+    }
     ?>
 
   </tbody>
@@ -81,4 +89,9 @@
 </html>
 
 <?php
+}
+else
+{
+  header('Location:signin.html');
+}
 ?>

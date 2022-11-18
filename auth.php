@@ -18,9 +18,11 @@ $res = $pdo->query($sql);
 if($res->rowCount()>0){  // s'il y a quelqu'un avec ce login et mot de passe
     foreach ($pdo->query($sql) as $row) {
         $role=$row['role'];
-        session_start();
+        session_start();  // on démarre la session
         $_SESSION["email"] = $row['email'];
         $_SESSION["role"] = $row['role'];
+        $_SESSION["nom"] = $row['nom'];
+        $_SESSION["prenom"] = $row['prenom'];
         if($role == "admin")
         {
             header('Location:dashboardadmin.php');

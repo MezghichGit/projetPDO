@@ -1,3 +1,7 @@
+<?php
+session_start();
+if ($_SESSION["email"] && $_SESSION["role"]=="client") {
+?>
 <html>
 <head>
 <meta charset="UTF-8"/>
@@ -19,6 +23,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Déconnexion</a>
+      </li>
+      <li class="nav-item" style="margin-left:600px">
+        <a class="nav-link">Bonjour <?php echo $_SESSION["email"];?></a>
       </li>
     </ul>
   </div>
@@ -78,4 +85,9 @@
 </html>
 
 <?php
+}
+else
+{
+  header('Location:signin.html');
+}
 ?>
