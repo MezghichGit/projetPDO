@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commandes>
+<commande>
+<date>2022-11-18 16:50:43</date>
+<prixCommande>1900</prixCommande>
+<idProduit>2</idProduit>
+<idUser>3</idUser>
+</commande>
+
+<commande>
+<date>2022-11-18 16:50:46</date>
+<prixCommande>12000</prixCommande>
+<idProduit>3</idProduit>
+<idUser>3</idUser>
+</commande>
+</commandes>

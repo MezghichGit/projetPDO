@@ -68,7 +68,7 @@ if ($_SESSION["email"] && $_SESSION["role"]=="client") {
                 <td><?php echo $row['description'];?></td>
                 <td><?php echo $row['prix'];?></td>
                 <td><?php echo $row['disponibilite'];?></td>
-                <td><a href="#" class="btn btn-success">Acheter</a></td>
+                <td><a href="commande.php?idProduit=<?php echo $row['id'];?>&prix=<?php echo $row['prix'];?>" class="btn btn-success">Acheter</a></td>
             </tr>
             
     
