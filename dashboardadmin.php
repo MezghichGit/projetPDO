@@ -73,7 +73,7 @@ if ($_SESSION["email"] && $_SESSION["role"]=="admin") {
                 <td><?php echo $row['prix'];?></td>
                 <td><?php echo $row['disponibilite'];?></td>
                 <td><a href="#" class="btn btn-warning">Modifier</a></td>
-                <td><a href="#" class="btn btn-danger">Supprimer</a></td>
+                <td><a href="deleteproduit.php?id=<?php echo $row['id'];?>" class="btn btn-danger">Supprimer</a></td>
             </tr>
             
     
